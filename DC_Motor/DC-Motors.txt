@@ -1,0 +1,10 @@
+--- Controlling a DC motor to rotate clock-wise or anti-clockwise.
+-- The DC motors can't be directly connected to the mircorcontroller.
+-- This due to the power usage of the DC motor which the microcontroller can't give.
+-- A control circuit must be used to connect the microcontroller with the DC motor.
+-- This circuit is called H_Bridge:
+
+-- H-Bridge:
+- It consists of 4-transistors.
+- 2 are from PNP type and 2 are from NPN type.
+- we connect them all parallel with the dc motor.

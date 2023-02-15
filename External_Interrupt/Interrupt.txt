@@ -1,0 +1,20 @@
+--- Super Loop System:
+- When all the code is written inside the while(1) loop.
+- They are a little bit slow and our embedded system is a time matter so we need more effecient way to execute the important code immediately.
+- It's simple, deterministic and needs low hardware requirements.
+- But it has low responsiveness and consumes more power.
+
+--- INTERRUPTS:
+
+--- Forground-Background System:
+-- In sush a systems when a spcific event occures it will interrupt the normal program making the processor to go to the interrupt survice routine (ISR) and execute the code inside it.
+-- The system became high responsive but more complex and not deterministic as it can't be known when the push button will be pressed.
+-- Types of Interrupt:
+- External interrupts occur outside the processor due to any peripheral.
+- Internal interrupts occur inside the processor due to any error.
+
+--- Programmable Interrupt Controller (PIC):
+-- PIC is a hardware element that handles the interrupt serving and priorities. All interrupts are connected to the PIC, when any interrupt happens, the PIC recieves the interrupt
+request and generate a signal to the processor on its INT pin. Then the PIC tells the processor the ID of the interrupt happend through a special data bus.
+-- Inside the processor there is a piece of memeory called vector table every location of this memory (called vectory) corresponding to a certain interrupt.
+-- When the process recieves an interrupt request from the PIC and gets its ID, it jumps to the corresponding location in the vector table to find the address of its ISR.

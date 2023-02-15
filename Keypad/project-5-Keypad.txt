@@ -1,0 +1,10 @@
+--- Keypad:
+-- It contains numbers and letters.
+-- It has eight pins(four rows and four colomns).
+-- In this project we have a keypad and LCD and we will show the data of the pressed buttons of keypad on the LCD.
+
+--- How is keypad connected to microcontroller:
+-- each row is connected to a pin in the mircrocontroller with a pull-up resistor and configured as an input.
+-- each colomn is connected to a pin also but its configured as output pin.
+-- how it works?
+- the buttons are connected with columns and rows so if a button is clicked then its column will be 0V and its row will be 0V also. 

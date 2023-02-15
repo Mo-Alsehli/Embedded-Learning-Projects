@@ -1,0 +1,37 @@
+--- LCDs:
+-- They are used to display data.
+-- They consist of 16 pins:
+- PIN_1 - VCC (ground). 
+- PIN_2 - VDD (+5v).
+- PIN_3 - VE (contrast V) Controls the brightness of the LCDs.
+- PIN_4, 5, 6 - Register select, Register read/write, Register enable.
+- PIN_7 to PIN_14 - Data pins.
+- PIN_15 - LED positive.
+- PIN_16 - LED negative.
+
+-- The LCD has 3 registers: DDRAM, CGRAM, CGROM.
+
+--- 4-bit Mode:
+-- When we are using the mode of 4-bit operation we will use the bits from 4 to 7 and the bits from 0 to 3 are not used.
+-- Data is transfered twice before the instruction cycle is complete.
+- The data is transfered to the higher order bits first which are from 4bit to 7 bit.
+- Then the data is transfered to the lower order bits which are from 0bit to 3bit.
+-- Charactrestics:
+- N: referes to the number of lines.
+- F: referes to the font size.
+- D: referes to Display the value 0 means it's off.
+- C: referes to the cursor the value 0 means it's off.
+- B: referes to the Blink the value 0 means it's off. 
+
+--- Initialization Process:
+-- Wait for more than 30ms after VDD rises to 4.5V (we wait for the code is built and every thing is complete and we don't have to add a delay function).
+-- Sending Commands:
+-- We will send commands to initialize the LCD.
+- we send the command to initialize the LCD and send a command to initialize the Enable register and set it to high.
+- we will set the RS to LOW value which is the instruction Operation (now we are in the command mode).
+- set the R/W in the writing mode (setting it to zero).
+- then setting the value of 4MSP to the command hence the data pins will be connected to the 4MSP of the provided PORT.
+- then we now set the Enable to High and wait for 5ms for ex and set it to low again.
+- then we make a delay again as between each command we have to.
+-- The initialize funciton it self:
+- we will send the command of the function set(define values of N and F).

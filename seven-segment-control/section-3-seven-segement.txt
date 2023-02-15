@@ -1,0 +1,24 @@
+--- 7-segment:
+-- In this project there will be a push button and a seven segment connected to the microcontroller and display the numbers when incremented when pressing the push button.
+ __
+|__|    --> This is a 7-segment 
+|__|
+
+-- It's a display that consists of 7 LEDs connected together used to display a number.
+-- It has two types: Common Cathode (connect the led to the VCC) and Common Anode (connect the led to the GROUND).
+
+--- BCD:
+-- To use the 7-segment directly with the microcontroller, 8 pins will be used from the microcontroller to use only one 7-segment display.
+-- This considered as a waste of resourses.
+-- BCD chip has only 4 pins.
+-- For each number to display the BCD decoder takes the number in binary and displays it on the 7-segment.
+-- for example if we have the number 3 which is 0011 in binary it takes the binary number as input for the 4 pins and output a code to the 7-segment that will display the corresponding segments to display the number 3.
+
+--- DBouncing Problem:
+-- due to the high speed of the proccessor there might be a waste of executed time while the user inputing the data the processor may execute the code while the input isn't complete and lead to undefined behaviour and this is a waste. 
+-- We can use a flag to solve this issue but it's not efficient in all cases.
+-- We can use either a delay function.
+
+
+--- 4LSB: the least significant bits are 0 1 2 3.
+
